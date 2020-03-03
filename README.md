@@ -4,4 +4,13 @@ This small proof of concept is a Node server that embeds static files like JavaS
 
 ## Usage
 
-Run `npm start` to create the `build/server.js` file and run a small Node server to test it.
+Run `npm start` to:
+
+- Run webpack to create the `build/server.js` file.
+- Run `node serve.js` to start a small server that runs the `build/serve.js` file simulating a serverless service.
+
+Then visit:
+
+- http://localhost:3000/static/image.png
+- http://localhost:3000/static/js-file.js
+- http://localhost:3000/static/robots.txt
