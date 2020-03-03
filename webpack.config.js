@@ -10,8 +10,24 @@ module.exports = {
   },
   target: "node",
   resolve: {
+    extensions: [".js", ".png"],
     alias: {
       "any-promise": "promise-monofill"
     }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.png$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: true
+            }
+          }
+        ]
+      }
+    ]
   }
 };

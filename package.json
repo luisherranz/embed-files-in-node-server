@@ -1,19 +1,21 @@
 {
-  "name": "embed-server",
+  "name": "embed-files-in-node-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A POC that embeds files (like plain files or images) in a single server.js file.",
+  "main": "serve.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx webpack && node serve.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "@luisherranz",
+  "license": "MIT",
   "dependencies": {
+    "file-loader": "^5.1.0",
     "koa": "^2.11.0",
     "koa-route": "^3.2.0",
     "promise-monofill": "^1.0.1",
     "raw-loader": "^4.0.0",
+    "url-loader": "^3.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   }
