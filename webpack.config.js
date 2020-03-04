@@ -12,12 +12,14 @@ module.exports = {
   target: "node",
   resolve: {
     alias: {
+      // Needed for bundling Koa's server in a single file.
       "any-promise": "promise-monofill"
     }
   },
   module: {
     rules: [
       {
+        // Embed the images in base64. No size limit.
         test: /\/static\/.*\.png$/i,
         use: [
           {
@@ -29,6 +31,7 @@ module.exports = {
         ]
       },
       {
+        // Embed the js and txt files in a raw string.
         test: /\/static\/.*\.(js|txt)$/i,
         use: [
           {
