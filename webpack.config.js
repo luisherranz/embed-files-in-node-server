@@ -1,7 +1,8 @@
 const path = require("path");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
+  devtool: "source-map",
   entry: "./index.js",
   output: {
     filename: "server.js",
@@ -10,7 +11,6 @@ module.exports = {
   },
   target: "node",
   resolve: {
-    extensions: [".js", ".png"],
     alias: {
       "any-promise": "promise-monofill"
     }
@@ -18,13 +18,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.png$/i,
+        test: /\/static\/.*\.png$/i,
         use: [
           {
             loader: "url-loader",
             options: {
               limit: true
             }
+          }
+        ]
+      },
+      {
+        test: /\/static\/.*\.(js|txt)$/i,
+        use: [
+          {
+            loader: "raw-loader"
           }
         ]
       }

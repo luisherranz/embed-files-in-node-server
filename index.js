@@ -5,8 +5,7 @@ const app = new Koa();
 
 app.use(
   get("/static/:filename", (ctx, filename) => {
-    // Set response body.
-    const file = require(`raw-loader!./build/static/${filename}`).default;
+    const file = require(`./build/static/${filename}`).default;
     // JavaScript files.
     if (filename.endsWith(".js")) {
       ctx.type = "application/javascript";
@@ -14,9 +13,7 @@ app.use(
     }
     // PNG files.
     if (filename.endsWith(".png")) {
-      const base64 = file
-        .replace('export default "data:image/png;base64,', "")
-        .replace('"', "");
+      const base64 = file.replace("data:image/png;base64,", "");
       ctx.type = "image/png";
       ctx.body = Buffer.from(base64, "base64");
     }
