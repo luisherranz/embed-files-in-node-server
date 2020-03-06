@@ -42,5 +42,10 @@ module.exports = {
       }
     ]
   },
-  plugins: [new webpack.IgnorePlugin(/^encoding$/)]
+  plugins: [new webpack.IgnorePlugin(/^encoding$/)],
+  performance: {
+    hints: "error",
+    maxEntrypointSize: 5000000,
+    maxAssetSize: 5000000
+  }
 };
