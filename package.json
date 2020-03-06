@@ -4,7 +4,7 @@
   "description": "A POC that embeds files (like plain files or images) in a single server.js file.",
   "main": "serve.js",
   "scripts": {
-    "start": "npx webpack && node serve.js",
+    "start": "rm -rf build && cd frontity && npx frontity build && cd .. && npx webpack && rm -rf frontity/build && node serve.js",
     "debug": "npx webpack && node --inspect-brk serve.js"
   },
   "keywords": [],
