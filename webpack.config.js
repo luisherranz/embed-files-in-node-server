@@ -6,7 +6,7 @@ module.exports = {
   devtool: "source-map",
   entry: "./index.js",
   output: {
-    filename: "server.js",
+    filename: "serverless.js",
     path: path.join(__dirname, "build"),
     libraryTarget: "commonjs2"
   },

@@ -1,4 +1,4 @@
-const code = require("./build/server");
+const code = require("./build/serverless");
 const http = require("http");
 const server = http.createServer(code);
 server.listen(3000);
